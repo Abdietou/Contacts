@@ -9,17 +9,20 @@ import {RouterModule} from '@angular/router'
 import { HttpModule } from '@angular/http';
 import {FormsModule} from '@angular/forms'
 import { ContactsService } from '../services/contacts.service';
+import { NewContactComponent } from './new-contact/new-contact.component';
 
 const appRoutes:Routes=[
   {path:'about',component:AboutComponent},
   {path:'contacts',component:ContactsComponent},
+  {path:'new-contact',component:NewContactComponent},
   {path:'',redirectTo:'/about',pathMatch:'full'}
 ];
 @NgModule({
   declarations: [
     AppComponent,
     ContactsComponent,
-    AboutComponent
+    AboutComponent,
+    NewContactComponent
   ],
   imports: [
     BrowserModule,
