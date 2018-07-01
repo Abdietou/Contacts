@@ -7,8 +7,8 @@ export class ContactsService{
 
     }
 
-    getContacts(){
-        return this.http.get("http://localhost:8080/chercherContacts?mc=A&size=5&page=0")
+    getContacts(motCle:string,page:number,size:number){
+        return this.http.get("http://localhost:8080/chercherContacts?mc="+motCle+"&size="+size+"&page="+page)
             .map(resp=>resp.json());
     }
 }
