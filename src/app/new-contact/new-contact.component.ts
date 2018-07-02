@@ -9,6 +9,7 @@ import { ContactsService } from '../../services/contacts.service';
 })
 export class NewContactComponent implements OnInit {
 contact:Contact=new Contact();
+mode:number=1;
   constructor(public contactsService:ContactsService) { }
 
   ngOnInit() {
@@ -17,7 +18,8 @@ contact:Contact=new Contact();
   saveContact() {
     this.contactsService.saveContact(this.contact)
     .subscribe(data=>{
-      console.log(data)
+      this.contact=data;
+      this.mode=2;
     }, err=>{
       console.log(err);
     })
